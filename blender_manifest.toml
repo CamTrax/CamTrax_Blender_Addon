@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+id = "camtrax"
+version = "1.0.0"
+name = "CamTrax"
+tagline = "CamTrax"
+maintainer = "CamTrax"
+type = "add-on"
+website = "camtrax.io"
+tags = ["Import-Export"]
+blender_version_min = "3.0.0"
+license = [
+"SPDX:GPL-2.0-or-later",
+]
