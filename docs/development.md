@@ -19,7 +19,7 @@
 1. Symlink or copy this repository into Blender’s add-ons directory, **or** use **Install from Disk** pointing at the folder that contains `__init__.py`.
 2. Enable the add-on and use **Reload Scripts** after edits (or restart Blender). Preview icons may require a full disable/enable cycle because `bpy.utils.previews` is created in `register()`.
 
-There is no separate virtualenv, `requirements.txt`, or Makefile in this repository.
+No virtualenv, `requirements.txt`, or Makefile is required.
 
 ## Versioning
 
@@ -38,8 +38,6 @@ Current declared version: **1.0.0**. Minimum Blender: **3.0.0**.
 1. Ensure `assets/logo2.png` is included.
 2. Produce a zip whose root contains `__init__.py`, `blender_manifest.toml`, `assets/`, and any docs you choose to ship.
 3. Distribute the zip for **Preferences → Add-ons → Install…**, or as a Blender 4.2+ extension using the manifest (`id = "camtrax"`).
-
-There is no automated release pipeline, changelog generator, or publishing script in-repo.
 
 ## Testing
 
@@ -66,7 +64,7 @@ Resolve any redistribution license questions with the maintainers before publish
 
 ## Related repositories
 
-- **This repo:** Blender import add-on only
-- **CamTrax iOS app:** records/exports the `.Trx` + media assets this importer consumes (separate private repository; not vendored here)
+- **Blender add-on:** `CamTrax/CamTrax_Blender_Addon`
+- **iOS app / exporter:** [`studiobloom/CamTrax`](https://github.com/studiobloom/CamTrax)
 
-Do not document or assume iOS-only features (LiDAR capture UI, ProRes settings, etc.) as part of this add-on’s implemented surface area.
+Use the iOS repo to confirm exported filenames and `.Trx` shape. Keep this repo’s docs aligned with what the importer actually reads.

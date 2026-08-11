@@ -4,7 +4,7 @@ Repository-wide instructions for AI coding agents working on **CamTrax/CamTrax_B
 
 ## What this project is
 
-A **Blender Python add-on** that imports CamTrax `.Trx` AR tracking files into Blender (camera animation, planes, empties, plate/segmentation compositor setup, sequencer audio). It is **not** the iOS recorder.
+A **Blender Python add-on** that imports CamTrax `.Trx` AR tracking files into Blender (camera animation, planes, empties, plate/segmentation compositor setup, sequencer audio).
 
 | Fact | Detail |
 |------|--------|
@@ -18,7 +18,6 @@ User docs: [`README.md`](README.md). Developer docs: [`docs/`](docs/).
 
 ## Architecture context
 
-- No subpackages, tests, CI, Docker, env files, auth, or database.
 - Dependencies: Blender’s `bpy` / `mathutils` / `bpy_extras.io_utils.ImportHelper` + stdlib `json`, `os`, `math`.
 - `.Trx` is JSON; companion `*-video.mp4` and `*-segmentation.mp4` are required for a full import. Schema as consumed: [`docs/trx-format.md`](docs/trx-format.md).
 - Transforms are converted with the `UNITY2BLENDER` matrix before assignment to Blender objects.
@@ -29,7 +28,7 @@ User docs: [`README.md`](README.md). Developer docs: [`docs/`](docs/).
 - Prefer minimal diffs. This file is intentionally dense; avoid drive-by refactors of the large nested `execute()` unless the task requires it.
 - When changing user-facing behavior, update `README.md` and the relevant `docs/*.md` in the same change.
 - Keep `bl_info["version"]`, `blender_manifest.toml` `version`, and the panel version label synchronized.
-- Do **not** document or implement features that are not present in this repo (e.g. inventing export formats, cloud sync, or iOS capture settings).
+- Do **not** document or implement features that are not present in this repo.
 
 ## Build / test / lint
 
@@ -61,7 +60,7 @@ There is no `npm`/`pytest`/`make` workflow. Do not invent CI unless asked.
 
 ## Related product code
 
-The CamTrax **iOS** application (recording/export) lives in a separate repository. Use it only to verify export naming and JSON shape when you have access. This add-on’s behavior must remain consistent with files it already imports; do not assume unpublished iOS features are available here.
+The CamTrax **iOS** application (recording/export) lives at [`studiobloom/CamTrax`](https://github.com/studiobloom/CamTrax). Use it to verify export naming and JSON shape. This add-on’s behavior must remain consistent with files it actually imports.
 
 ## Scoped AGENTS.md
 

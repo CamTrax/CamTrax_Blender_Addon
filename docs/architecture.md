@@ -2,11 +2,13 @@
 
 ## Overview
 
-CamTrax ships as a **single-module Blender add-on**. All runtime logic lives in [`__init__.py`](../__init__.py). There are no subpackages, network calls, or external Python dependencies beyond the Blender Python API (`bpy`, `bpy_extras`, `mathutils`) and the Python standard library (`json`, `os`, `math`).
+CamTrax ships as a **single-module Blender add-on**. All runtime logic lives in [`__init__.py`](../__init__.py), using Blender APIs (`bpy`, `bpy_extras`, `mathutils`) plus `json`, `os`, and `math`.
+
+The recording/export side lives in the [CamTrax iOS app repo](https://github.com/studiobloom/CamTrax). This add-on consumes the exported `.Trx` JSON and sibling media files.
 
 ```mermaid
 flowchart LR
-  subgraph ios [CamTrax iOS app - separate repo]
+  subgraph ios [CamTrax iOS app]
     Rec[AR session recording]
     Export["Export *-camera.Trx + media"]
   end
@@ -121,11 +123,3 @@ sequenceDiagram
   User->>Panel: Enable Shadow Catcher
   Panel->>Scene: Cycles + Horizontal Plane [1] shadow catcher
 ```
-
-## What this repository does not contain
-
-- iOS / ARKit capture code
-- Network APIs, auth, or cloud sync
-- Database or persistent settings beyond Blender scene state
-- Automated tests or CI workflows
-- Build tooling other than packaging the folder/zip for Blender install

@@ -76,5 +76,4 @@ elif video_orientation == ROTATE_LANDSCAPE_RIGHT:
 1. Preserve `.Trx` key names and the `-camera.Trx` / `-video.mp4` / `-segmentation.mp4` suffix contract unless updating producer + docs together.
 2. Keep `UNITY2BLENDER` conversion on all imported transforms unless intentionally changing the coordinate basis.
 3. Avoid renaming `bl_idname`s (`sna.import_48be2`, `sna.shadow_992d5`, panel id) without a migration note.
-4. Do not add network calls or secrets; the add-on is offline file import only.
-5. When splitting `__init__.py` into modules, retain a top-level `register` / `unregister` and valid `bl_info` / manifest for Blender discovery.
+4. When splitting `__init__.py` into modules, retain a top-level `register` / `unregister` and valid `bl_info` / manifest for Blender discovery.

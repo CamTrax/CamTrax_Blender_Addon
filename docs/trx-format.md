@@ -1,6 +1,6 @@
 # `.Trx` format (as consumed by this add-on)
 
-This document describes the **JSON structure and companion files that the Blender importer reads**. It is derived from [`__init__.py`](../__init__.py) (`import_Trxfile` / `create_node_graph`). The CamTrax iOS app is the producer of these assets; this repo does not define an exporter.
+This document describes the **JSON structure and companion files that the Blender importer reads**. It is derived from [`__init__.py`](../__init__.py) (`import_Trxfile` / `create_node_graph`). The [CamTrax iOS app](https://github.com/studiobloom/CamTrax) produces the recording assets.
 
 > **Naming:** The importer derives sibling paths by string-replacing `'-camera.Trx'` on the selected file path. Recordings should use that suffix convention.
 
@@ -14,6 +14,8 @@ This document describes the **JSON structure and companion files that the Blende
 | `{base}-blender-render.mp4` | Default `scene.render.filepath` after import (output target, not an input) |
 
 If companion videos are missing, Blender’s movie-clip / sound loading will fail at import time.
+
+The current iOS app writes `.mov` videos (`{base}-video.mov`, `{base}-segmentation.mov`). This add-on currently looks for `.mp4`, so exported recordings need matching names or an importer path update before import.
 
 ## Top-level JSON object
 

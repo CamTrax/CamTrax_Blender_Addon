@@ -12,7 +12,7 @@
 
 ## What this is
 
-**CamTrax** (this repository) is a Blender **Import-Export** add-on. It imports `.Trx` tracking files produced by the CamTrax iOS app and rebuilds the recorded camera motion, detected planes, tracked empties, background video, audio, and a compositor setup for compositing CG into the live-action plate.
+**CamTrax** is a Blender **Import-Export** add-on. It imports `.Trx` tracking files produced by the CamTrax iOS app and rebuilds the recorded camera motion, detected planes, tracked empties, background video, audio, and compositor setup.
 
 Product overview and the iOS recorder: [camtrax.io](https://camtrax.io).
 
@@ -41,6 +41,8 @@ The import operator filters for `*.Trx`. Paths are derived by replacing the `-ca
 | `*-segmentation.mp4` | Segmentation mask video used in the compositor graph |
 
 Keep these files together with matching base names. After import, the add-on sets the default render output path to `*-blender-render.mp4` next to the source files.
+
+Current iOS app exports use `.mov` companion videos. Rename or convert them to the `.mp4` names above, or update the importer path replacements before importing.
 
 ## How to use
 

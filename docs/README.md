@@ -2,7 +2,7 @@
 
 Technical documentation for contributors working on this repository (`CamTrax/CamTrax_Blender_Addon`).
 
-This package is a Blender Python add-on that imports CamTrax `.Trx` recordings into a Blender scene. Recording/capture happens in the separate CamTrax iOS app; this repo only implements Blender-side import and related UI.
+This package imports CamTrax `.Trx` recordings into Blender. Recording/export context lives in the [CamTrax iOS app repo](https://github.com/studiobloom/CamTrax).
 
 ## Contents
 
@@ -27,11 +27,10 @@ This package is a Blender Python add-on that imports CamTrax `.Trx` recordings i
 └── docs/                    # Developer documentation (this folder)
 ```
 
-There is no separate package layout, test suite, CI config, database, authentication, or environment-variable configuration in this repository.
-
 ## Upstream / product context
 
 - Product site: [https://camtrax.io](https://camtrax.io)
+- iOS app / exporter: [https://github.com/studiobloom/CamTrax](https://github.com/studiobloom/CamTrax)
 - Blender Python API: [https://docs.blender.org/api/current/](https://docs.blender.org/api/current/)
 - Blender extensions / manifests: [https://docs.blender.org/manual/en/latest/advanced/extensions/](https://docs.blender.org/manual/en/latest/advanced/extensions/)
 
